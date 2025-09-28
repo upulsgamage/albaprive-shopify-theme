@@ -1,0 +1,89 @@
+:root {
+  --font-body-family: var(--font-stack-body);
+  --font-heading-family: var(--font-stack-header);
+  
+  --color-base-text: {{ settings.colors_text }};
+  --color-base-background-1: {{ settings.colors_background_1 }};
+  --color-base-background-2: {{ settings.colors_background_2 }};
+  --color-base-accent-1: {{ settings.colors_accent_1 }};
+  --color-base-accent-2: {{ settings.colors_accent_2 }};
+  
+  --spacing-unit: 30px;
+  --spacing-unit-sm: 15px;
+  --spacing-unit-lg: 60px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-base-text);
+  background: var(--color-base-background-1);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-unit);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading-family);
+  line-height: 1.2;
+  margin: 0 0 var(--spacing-unit-sm);
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border: 1px solid var(--color-base-accent-1);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.button--primary {
+  background: var(--color-base-accent-1);
+  color: #FFFFFF;
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--color-base-accent-1);
+}
+
+/* Helper Classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-to-content-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 9999;
+  background: var(--color-base-accent-1);
+  color: #FFFFFF;
+  padding: 1rem;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content-link:focus {
+  top: 0;
+}
